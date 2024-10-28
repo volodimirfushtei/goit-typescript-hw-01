@@ -1,9 +1,19 @@
-function showMessage(message: string): void {
-  console.log(message);
+namespace UserNamespace {
+  export type User = {
+    name?: string;
+    surname?: string;
+    email?: string;
+    password?: string;
+  };
 }
-function calc(num1: number, num2: number): number {
-  return num1 + num2;
+
+function createOrUpdateUser<T extends Partial<UserNamespace.User>>(
+  initialValues: T
+) {
+  console.log(initialValues);
 }
-function customError(): never {
-  throw new Error("Custom error");
-}
+
+createOrUpdateUser({
+  email: "user@mail.com",
+  password: "password123",
+});
