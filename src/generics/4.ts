@@ -1,15 +1,11 @@
-namespace UserNamespace {
-  export type User = {
-    name?: string;
-    surname?: string;
-    email?: string;
-    password?: string;
-  };
-}
+export type User = {
+  name?: string;
+  surname?: string;
+  email?: string;
+  password?: string;
+};
 
-function createOrUpdateUser<T extends Partial<UserNamespace.User>>(
-  initialValues: T
-) {
+function createOrUpdateUser<T extends Partial<User>>(initialValues: T) {
   console.log(initialValues);
 }
 
